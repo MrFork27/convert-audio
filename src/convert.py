@@ -11,7 +11,7 @@ def convert(mp4FileName, mp3FileName):
     print(error)
 
 # Test file path
-mp4File = "./media/audio-video.mp4"
-mp3File = "./media/audio.mp3"
+mp4File = "./test-media/audio-video.mp4"
+mp3File = "./test-media/audio.mp3"
 
 convert(mp4File, mp3File)
