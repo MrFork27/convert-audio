@@ -1,17 +1,17 @@
 import moviepy.editor as mp
 
-name = "./media/audio-video.mp4"
+def convert(mp4FileName, mp3FileName):
+  try:
+    # Load .mp4 file
+    clip = mp.VideoFileClip(mp4FileName)
 
-try:
-  # Load .mp4 file
-  clip = mp.VideoFileClip(name)
-except Exception as error:
-  print('Error load .mp4 file')
-  print(error)
+    # Write audio in .mp3 file
+    clip.audio.write_audiofile(mp3FileName)
+  except Exception as error:
+    print(error)
 
-try:
-  # Write audio in .mp3 file
-  clip.audio.write_audiofile("audio.mp3")
-except Exception as error:
-  print('Error write audio in .mp3 file')
-  print(error)
+# Test file path
+mp4File = "./media/audio-video.mp4"
+mp3File = "./media/audio.mp3"
+
+convert(mp4File, mp3File)
